@@ -107,10 +107,6 @@
 			"configurePreset": "valgrind"
 		},
 		{
-			"name": "valgrind-release",
-			"configurePreset": "valgrind-release"
-		},
-		{
 			"name": "clean-valgrind",
 			"configurePreset": "valgrind",
 			"targets": ["clean"]
@@ -151,10 +147,6 @@
 		{
 			"name": "valgrind",
 			"configurePreset": "valgrind"
-		},
-		{
-			"name": "valgrind-release",
-			"configurePreset": "valgrind-release"
 		},
 		{
 			"name": "helgrind",

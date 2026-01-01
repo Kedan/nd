@@ -1,0 +1,4 @@
+./build
+./cov
+*.info
+*.cleaned
