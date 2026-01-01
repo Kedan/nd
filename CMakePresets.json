@@ -1,0 +1,168 @@
+{
+	"version": 4,
+	"configurePresets": [
+		{
+			"name": "debug",
+			"generator": "Ninja",
+			"binaryDir": "build/debug",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"ENABLE_SANITIZERS": "OFF",
+				"CMAKE_CXX_FLAGS_DEBUG": " -Wshadow -Wconversion -Werror -g -O0"
+			}
+		},
+		{
+			"name": "asan",
+			"generator": "Ninja",
+			"binaryDir": "build/asan",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"ENABLE_SANITIZERS": "ON",
+				"CMAKE_CXX_FLAGS_DEBUG": " -Wshadow -Wconversion -Werror -g -O1"
+			}
+		},
+		{
+			"name": "release",
+			"generator": "Ninja",
+			"binaryDir": "build/release",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release",
+				"ENABLE_SANITIZERS": "OFF"
+			}
+		},
+		{
+			"name": "valgrind",
+			"generator": "Ninja",
+			"binaryDir": "build/valgrind",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"ENABLE_SANITIZERS": "OFF",
+				"CMAKE_CXX_FLAGS_DEBUG": " -Wshadow -Wconversion -Werror -g -O0"
+			}
+		},
+		{
+			"name": "helgrind",
+			"generator": "Ninja",
+			"binaryDir": "build/helgrind",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_CXX_FLAGS_DEBUG": " -O0 -g -fno-omit-frame-pointer -pthread"
+			}
+		},
+		{
+			"name": "coverage",
+			"binaryDir": "build/coverage",
+			"generator":"Ninja",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"ENABLE_COVERAGE": "ON"
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "debug",
+			"configurePreset": "debug"
+		},
+		{
+			"name": "clean-debug",
+			"configurePreset": "debug",
+			"targets": ["clean"]
+		},
+		{
+			"name": "rebuild-debug",
+			"configurePreset": "debug",
+			"targets": ["clean", "all"]
+		},
+		{
+			"name": "asan",
+			"configurePreset": "asan"
+		},
+		{
+			"name": "clean-asan",
+			"configurePreset": "asan",
+			"targets": ["clean"] 
+		},
+		{
+			"name": "rebuild-asan",
+			"configurePreset": "asan",
+			"targets": ["clean","all"]
+		},
+		{
+			"name": "release",
+			"configurePreset": "release"
+		},
+		{
+			"name": "release-clean",
+			"configurePreset": "release",
+			"targets": ["clean"]
+		},
+		{
+			"name": "release-rebuild",
+			"configurePreset": "release",
+			"targets": ["clean", "all"]
+		},
+		{
+			"name": "valgrind",
+			"configurePreset": "valgrind"
+		},
+		{
+			"name": "valgrind-release",
+			"configurePreset": "valgrind-release"
+		},
+		{
+			"name": "clean-valgrind",
+			"configurePreset": "valgrind",
+			"targets": ["clean"]
+		},
+		{
+			"name": "helgrind",
+			"configurePreset": "helgrind"
+		},
+		{
+			"name": "clean-helgrind",
+			"configurePreset": "helgrind",
+			"targets": ["clean"]
+		},
+		{
+			"name": "coverage",
+			"configurePreset": "coverage"
+		},
+		{
+			"name": "coverage-clean",
+			"configurePreset": "coverage",
+			"targets": ["clean"]
+		}
+
+	],
+	"testPresets": [
+		{
+			"name": "debug",
+			"configurePreset": "debug"
+		},
+		{
+			"name": "asan",
+			"configurePreset": "asan"
+		},
+		{
+			"name": "release",
+			"configurePreset": "release"
+		},
+		{
+			"name": "valgrind",
+			"configurePreset": "valgrind"
+		},
+		{
+			"name": "valgrind-release",
+			"configurePreset": "valgrind-release"
+		},
+		{
+			"name": "helgrind",
+			"configurePreset": "helgrind"
+		},
+		{
+			"name": "coverage",
+			"configurePreset": "coverage"
+		}
+	]
+}
