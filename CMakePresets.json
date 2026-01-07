@@ -93,12 +93,12 @@
 			"configurePreset": "release"
 		},
 		{
-			"name": "release-clean",
+			"name": "clean-release",
 			"configurePreset": "release",
 			"targets": ["clean"]
 		},
 		{
-			"name": "release-rebuild",
+			"name": "rebuild-release",
 			"configurePreset": "release",
 			"targets": ["clean", "all"]
 		},
@@ -112,6 +112,11 @@
 			"targets": ["clean"]
 		},
 		{
+			"name": "rebuild-valgrind",
+			"configurePreset": "valgrind",
+			"targets": ["clean", "all"]
+		},
+		{
 			"name": "helgrind",
 			"configurePreset": "helgrind"
 		},
@@ -121,13 +126,23 @@
 			"targets": ["clean"]
 		},
 		{
+			"name": "rebuild-helgrind",
+			"configurePreset": "helgrind",
+			"targets": ["clean", "all"]
+		},
+		{
 			"name": "coverage",
 			"configurePreset": "coverage"
 		},
 		{
-			"name": "coverage-clean",
+			"name": "clean-coverage",
 			"configurePreset": "coverage",
 			"targets": ["clean"]
+		},
+		{
+			"name": "rebuild-coverage",
+			"configurePreset": "coverage",
+			"targets": ["clean", "all"]
 		}
 
 	],

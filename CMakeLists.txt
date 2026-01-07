@@ -52,5 +52,4 @@ endif()
 #add_subdirectory(foo)
 #add_subdirectory(bar)
 
-add_subdirectory(nn)
 add_subdirectory(tests)
