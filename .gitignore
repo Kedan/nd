@@ -1,0 +1,7 @@
+build/
+cov/
+*.info
+*.cleaned
+*.o
+*.a
+*.so

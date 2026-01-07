@@ -23,7 +23,7 @@ add_executable(nd
 
 target_link_libraries(nd
 	PRIVATE
-		foo
+		nn	
 )
 option(RELEASE "Relese" OFF)
 if(RELEASE)
@@ -49,6 +49,8 @@ if(ENABLE_SANITIZERS)
 	add_link_options(${SANITAZER_FLAGS})
 endif()
 
-add_subdirectory(foo)
-add_subdirectory(bar)
+#add_subdirectory(foo)
+#add_subdirectory(bar)
+
+add_subdirectory(nn)
 add_subdirectory(tests)

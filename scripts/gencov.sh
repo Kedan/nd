@@ -24,7 +24,7 @@ echo "Ok."
 
 echo "Branch coverage..."
 lcov --capture \
-	--ignore-errors inconsistent \
+	--ignore-errors inconsistent,mismatch \
    	--rc branch_coverage=1 \
 	--directory "$BDIR" \
 	--output-file "$BDIR/${BRANCH_COV_PREFIX}coverage.info"
