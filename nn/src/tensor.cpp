@@ -49,6 +49,10 @@ namespace nd::nn {
 		return m_shape;
 	}
 
+	TensorShape& Tensor::getShape() {
+		return m_shape;
+	}
+
 	float& Tensor::operator()(std::size_t i) {
 		if(m_shape.size() == 0) {
 			throw std::invalid_argument("Can't index scalar. Uset item().");

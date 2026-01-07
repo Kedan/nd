@@ -23,6 +23,7 @@ namespace nd::nn {
 			float& getItem();
 			
 			const TensorShape& getShape() const;
+			TensorShape& getShape();
 
 			const float& operator()(std::size_t i) const;
 			float& operator()(std::size_t i);
