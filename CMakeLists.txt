@@ -23,7 +23,7 @@ add_executable(nd
 
 target_link_libraries(nd
 	PRIVATE
-		nn	
+		nrl	
 )
 option(RELEASE "Relese" OFF)
 if(RELEASE)
@@ -52,4 +52,5 @@ endif()
 #add_subdirectory(foo)
 #add_subdirectory(bar)
 
+add_subdirectory(nrl)
 add_subdirectory(tests)

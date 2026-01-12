@@ -17,17 +17,18 @@ WORK IN PROGRESS
 - as above
 
 ## Build
-In project directory:
+./scripts directory contains .sh files, used to build code, generate coverage raports and clean workspace.
 
-- cmake --preset <preset_name> 
-- cmake --build --preset <preset_name>
+To build, use:
+- ./scripts/build.sh <preset_name>
 
-Clean: 
-- cmake --build --preset clean-<preset_name>
+To clean, use:
+- ./scripts/clean.sh <preset_name>
 
-Debug build:
-- cmake --preset debug
-- cmake --build --preset debug
+To clean, and remove build folder, use:
+- ./scripts/clean.sh <preset_name> -x
+
+To clean all: TO DO
 
 Available <preset_name>:
 - release
@@ -43,35 +44,20 @@ Available <preset_name>:
 
 ## Tests
 Depends on what preset you build, choose one:
-- ctest --preset <preset_name>
+- ./scripts/build.sh debug
 
 ## Debugging
-Unit Tests:
-- cmake --preset debug
-- cmake --build --preset debug
-- ctest --preset debug
-
 Address sanitizer:
-- cmake --preset asan
-- cmake --build --preset asan
-- ctest -V --preset asan
+- ./scripts/build.sh asan
 
 Memory leak check:
-- cmake --preset valgrind
-- cmake --build --preset valgrind 
-- ctest -V --preset valgrind
-- valgrind ./build/valgrind/nudny
+- ./scripts/build.sh valgrind
 
 Race conditioning test:
-- cmake --preset helgrind
-- cmake --build --preset helgrind
-- ctest -V --preset helgrind
-- valgrind --tool=helgrind ./build/helgrind/nudny
+- ./scripts/build.sh helgrind
 
 Coverage (line + branch):
-- cmake --preset coverage
-- cmake --build --preset coverage
-- cmake --build --preset coverage --target coverage
+- ./scripts/build.sh coverage
 
 Coverage raports are generated in cov/ directory
 
