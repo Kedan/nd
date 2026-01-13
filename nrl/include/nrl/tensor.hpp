@@ -100,10 +100,10 @@ namespace nd::nrl {
 				return const_cast<T&>( std::as_const(*this)(i,j));
 			}
 			
-			std::shared_ptr<Tensor> operator+(std::shared_ptr<Tensor> t) {
+			std::shared_ptr<Tensor<T>> operator+(const std::shared_ptr<Tensor<T>>& t) {
 				//scalar + scalar
 				if(m_shape.size() == 0 && t->m_shape.size() == 0) {
-					T d = getItem() + t.getItem();
+					T d = getItem() + t->getItem();
 					return std::make_shared<Tensor<T>>(d);
 				}
 				//scalar + 1D

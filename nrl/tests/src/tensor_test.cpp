@@ -58,6 +58,15 @@ TEST_F(TensorTest, RuntimeError_Whet_GetItemConst_Called_On_NonScalar) {
 	}, std::runtime_error);
 
 }
+
+TEST_F(TensorTest, Addition_Scalar_plus_Scalar) {
+	using tf = nd::nrl::Tensor<float>;
+	std::shared_ptr<tf> a = std::make_shared<tf>(1.f);
+	std::shared_ptr<tf> b = std::make_shared<tf>(1.f);
+	std::shared_ptr<tf> c = (*a) + b; 
+
+	EXPECT_FLOAT_EQ(c->getItem(), 2.f);
+}
 //
 //TEST_F(TensorTest, Flattern_Tensor_Data) {
 //	TensorGetter t{data2d};
