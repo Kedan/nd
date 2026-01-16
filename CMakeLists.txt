@@ -20,6 +20,9 @@ enable_testing()
 add_executable(nd
 	src/main.cpp
 )
+include_directories(
+	${CMAKE_CURRENT_SOURCE_DIR}/ext/nlohmann/include
+)
 target_include_directories(nd
 	PUBLIC
 	${CMAKE_CURRENT_SOURCE_DIR}/include
