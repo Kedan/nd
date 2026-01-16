@@ -1,5 +1,5 @@
 #include <iostream>
-#include <nrl/tensor.hpp>
+#include <nudny/nudny.hpp>
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[]) {
 	nd::nrl::Tensor<float> t{std::vector<float>{1.f,2.f,3.f,4.f,5.f}};

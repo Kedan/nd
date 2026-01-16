@@ -20,9 +20,14 @@ enable_testing()
 add_executable(nd
 	src/main.cpp
 )
-
+target_include_directories(nd
+	PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 target_link_libraries(nd
 	PRIVATE
+		util
+		io
 		nrl	
 )
 option(RELEASE "Relese" OFF)
@@ -52,5 +57,7 @@ endif()
 #add_subdirectory(foo)
 #add_subdirectory(bar)
 
+add_subdirectory(util)
+add_subdirectory(io)
 add_subdirectory(nrl)
 add_subdirectory(tests)

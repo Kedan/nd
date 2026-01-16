@@ -6,10 +6,10 @@
 #include <system_error>
 #include <stdexcept>
 
-namespace ns::util {
+namespace nd::util {
 
 	template<typename T>
-	std::optional<T> numopt(const std::string& s) {
+	std::optional<T> strtoptnum(const std::string& s) {
 		T v{};
 		auto [ptr, ec] = std::from_chars(s.data(), s.data()+s.size(), v);
 		if(ec == std::errc() && ptr == s.data() + s.size()) {
@@ -28,4 +28,4 @@ namespace ns::util {
 		return v;
 	}
 
-};
+}; // namespace nd::util

@@ -7,8 +7,7 @@
 #include <vector>
 #include <algorithm>
 
-namespace ns::util
-{
+namespace nd::util {
 	template<typename TClass, typename... TCallbackParams> 
 	class CallbackQueue final {
 		private:
@@ -40,4 +39,4 @@ namespace ns::util
 			que	m_queue;
 			std::mutex m_mutex;
 	};
-};
+}; // namespace nd::util

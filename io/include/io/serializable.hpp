@@ -5,15 +5,14 @@
 #include <fstream>
 #include <nlohmann/json.hpp>
 
-namespace ns::io {
+namespace nd::io {
 
 	class Serializable {
 		public:
 			virtual bool serialize() = 0;
 			virtual bool deserialize(nlohmann::json t_data) = 0;
-			virtual nlohmann::json getSerialized() {
-				return m_jsonData;
-			};
+			virtual nlohmann::json& getSerialized();
+			virtual const nlohmann::json& getSerialized() const;
 		protected:
 			nlohmann::json m_jsonData;
 	};
@@ -42,4 +41,4 @@ namespace ns::io {
 		return 1;
 	};
 
-};
+}; // namespace io

@@ -13,7 +13,7 @@
 #include <memory>
 #include <mutex>
 
-namespace ns::util {
+namespace nd::util {
 	template<typename T>
 	class QuasiSingleton {
 		protected:
@@ -32,5 +32,5 @@ namespace ns::util {
 				});
 				return *instance;
 			}
-	};
-}
+	}; // template class QuasiSingleton
+} // namespace nd::util
