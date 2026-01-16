@@ -1,6 +1,6 @@
 # Nudny Project Structure
 
-This is project basic structure.
+This project is nudny.
 
 WORK IN PROGRESS
 
@@ -14,7 +14,7 @@ WORK IN PROGRESS
 - coverage (line, branch)
 
 ## Requirements
-- as above
+- nlohmann/json
 
 ## Build
 ./scripts directory contains .sh files, used to build code, generate coverage raports and clean workspace.
@@ -69,4 +69,9 @@ Coverage raports are generated in cov/ directory
 - ./build - builded binaries
 - ./cov - Generated coverage raports
 - ./<My_module_dir> - Any module created (example: /foo, /bar). Structure should be as root directory structure
+
+## Modules
+- /util - basic utility classes and functions: number conversions, command line parser etc.
+- /io - basic class serialization and save/load functionality
+- /nrl - neural network
  
