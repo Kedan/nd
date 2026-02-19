@@ -21,12 +21,6 @@ add_executable(nd
 	src/main.cpp
 )
 
-add_library(nd
-	util
-	io
-	nrl
-)
-add_library(nudny::silnik ALIAS nd)
 
 include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/ext/nlohmann/include
@@ -72,3 +66,12 @@ add_subdirectory(util)
 add_subdirectory(io)
 add_subdirectory(nrl)
 add_subdirectory(tests)
+
+add_library(nudny STATIC src/main.cpp)
+target_link_libraries(nudny
+	PUBLIC
+	util
+	io
+	nrl
+)
+add_library(nudny::silnik ALIAS nudny)
