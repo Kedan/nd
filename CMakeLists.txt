@@ -20,6 +20,14 @@ enable_testing()
 add_executable(nd
 	src/main.cpp
 )
+
+add_library(nd
+	util
+	io
+	nrl
+)
+add_library(nudny::silnik ALIAS nd)
+
 include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/ext/nlohmann/include
 )
